@@ -67,11 +67,12 @@
                 Ваши задачи
               </v-subheader>
               <div v-for="(todo, i) in todos" :key="i">
-                <v-list-item-avatar>
+                <v-list-item>
                   <v-list-item-action>
                     <v-checkbox
                       v-if="!todo.done"
                       v-model="todo.done"
+                      @change="completeTodo(todo.id)"
                       :dark="isDark"
                     ></v-checkbox>
                   </v-list-item-action>
